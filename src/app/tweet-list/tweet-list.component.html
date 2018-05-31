@@ -1,0 +1,15 @@
+<mat-form-field>
+  <input matInput placeholder="Text lookup" [(ngModel)]="searchText">
+</mat-form-field>
+
+<mat-list *ngIf="tweets">
+  <mat-list-item *ngFor="let tweet of tweets | tweetFilter: searchText; trackBy: trackById">
+    <h3 matLine>{{tweet.user.name}} {{ relativeDate(tweet.created_at ) }}</h3>
+    <p matLine>
+      <span>{{tweet.text}}</span>
+    </p>
+    <p matLine>
+      <small>{{tweet.favorite_count || 0}} likes, {{tweet.retweet_count || 0}} retweets</small>
+    </p>
+  </mat-list-item>
+</mat-list>

@@ -16,5 +16,9 @@ export class NavigationComponent {
     );
     
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  tick() {
+    console.log('CD start')
+  }
   
   }
