@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnChanges, AfterViewChecked, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { Tweet } from '../tweet';
 import { TweetService } from './../tweet.service';
@@ -10,15 +10,25 @@ import { memoize } from 'lodash-decorators';
   selector: 'app-tweet-list',
   templateUrl: './tweet-list.component.html',
   styleUrls: ['./tweet-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TweetListComponent implements OnInit {
+export class TweetListComponent implements OnInit, AfterViewChecked, OnChanges {
   @Input() tweets: Tweet[];
   searchText: string = '';
 
   constructor() {}
 
   ngOnInit() {}
+
+  ngOnChanges() {
+  }
+
+  ngAfterViewChecked() {
+  }
+
+  blink() {
+    console.log('Checked')
+  }
 
   //@memoize()
   relativeDate(date) {
