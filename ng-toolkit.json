@@ -1,0 +1,8 @@
+{
+  "universal": {
+    "routingModule": "./src/app/app-routing.module.ts",
+    "skipInstall": false,
+    "directory": ".",
+    "project": "angular-perf"
+  }
+}
