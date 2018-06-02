@@ -18,7 +18,6 @@ export class TweetService {
 
   getTimelineTweets(): Observable<any> {
     const url = `${this.API_URL}/timeline`;
-    console.log('[Tweet Service] Requesting timeline')
     return this.http
       .get(url)
 
@@ -26,7 +25,6 @@ export class TweetService {
 
   getFavoriteTweets(): Observable<any> {
     const url = `${this.API_URL}/favorites`;
-    console.log('[Tweet Service] Requesting favorites')
     return this.http
       .get(url)
   }

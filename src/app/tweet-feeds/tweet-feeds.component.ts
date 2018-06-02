@@ -15,6 +15,7 @@ export class TweetFeedsComponent implements OnInit {
   isInteractionStarted: boolean = false
 
   tweets$: Observable<Tweet[]>
+  tweets
 
   constructor(private tweetService: TweetService) { }
 
@@ -25,7 +26,13 @@ export class TweetFeedsComponent implements OnInit {
 
     this.isInteractionStarted = true
 
-    this.tweets$ = this.tweetService
+/*     this.tweetService
+      .getTimelineTweets()
+      .subscribe( tweets => {
+        this.tweets = tweets
+      }) */
+
+      this.tweets$ = this.tweetService
       .getTimelineTweets()
 
   }

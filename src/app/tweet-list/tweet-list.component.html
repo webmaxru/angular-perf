@@ -4,7 +4,7 @@
 
 <mat-list *ngIf="tweets">
   <mat-list-item *ngFor="let tweet of tweets | tweetFilter: searchText; trackBy: trackById">
-    <h3 matLine>{{tweet.user.name}} {{ relativeDate(tweet.created_at ) }}</h3>
+    <h3 matLine>{{tweet.user.name}} <strong>{{  tweet.created_at | relativeDate }}</strong></h3>
     <p matLine>
       <span>{{tweet.text}}</span>
     </p>
@@ -13,3 +13,5 @@
     </p>
   </mat-list-item>
 </mat-list>
+
+{{ blink() }}
